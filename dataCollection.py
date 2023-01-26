@@ -1,3 +1,5 @@
+import math
+
 import cv2
 from cvzone.HandTrackingModule import HandDetector
 import numpy as np
@@ -12,11 +14,13 @@ while True:
     if hands:
         x, y, w, h = hands[0]['bbox']
         crop = img[y-space:y+h+space, x-space:x+w+space]
-        white[0:crop.shape[0], 0:crop.shape[1]] = crop
+
         if(h>w):
             times=size/h
-            new_width=w*times
-            resize=cv2.resize()
+            new_width=math.ceil(w*times)
+            newsize=cv2.resize(crop,(new_width,size))
+            left_gap=math.ceil((size-new_width)/2)
+            white[:, left_gap:left_gap+newsize.shape[1]] = newsize
 
 
 
