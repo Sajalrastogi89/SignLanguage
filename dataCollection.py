@@ -15,22 +15,26 @@ while True:
         x, y, w, h = hands[0]['bbox']
         crop = img[y-space:y+h+space, x-space:x+w+space]
 
-        if(h>w):
+        if(h>=w):
             times=size/h
             new_width=math.ceil(w*times)
             newsize=cv2.resize(crop,(new_width,size))
             left_gap=math.ceil((size-new_width)/2)
             white[:, left_gap:left_gap+newsize.shape[1]] = newsize
-
-
-
+        else:
+            times = size / w
+            new_height = math.ceil(h * times)
+            newsize = cv2.resize(crop, (size,new_height))
+            top_gap = math.ceil((size - new_height) / 2)
+            white[top_gap:top_gap + new_height, :] = newsize
 
         cv2.imshow("crop", crop)
         cv2.imshow("white", white)
 
     # cv2.imshow("White screen",white)
-
-
     cv2.imshow("image", img)
-    cv2.waitKey(1)
+    press=cv2.waitKey(1)
+    if press==ord("s"):
+        
+
 
