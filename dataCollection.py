@@ -38,7 +38,7 @@ while True:
     press=cv2.waitKey(1)
     if press==ord("a"):
         c=c+1
-        cv2.imwrite(f'Data/A/handImage_{time.time()}.jpg',white)
+        cv2.imwrite(f'Data/J/handImage_{time.time()}.jpg',white)
         print(c)
 
 
