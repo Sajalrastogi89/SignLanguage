@@ -13,7 +13,14 @@ while True:
         x, y, w, h = hands[0]['bbox']
         crop = img[y-space:y+h+space, x-space:x+w+space]
         white[0:crop.shape[0], 0:crop.shape[1]] = crop
-        print(crop.shape[0],y+h+space,y-space,h)
+        if(h>w):
+            times=size/h
+            new_width=w*times
+            resize=cv2.resize()
+
+
+
+
         cv2.imshow("crop", crop)
         cv2.imshow("white", white)
 
