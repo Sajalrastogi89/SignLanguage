@@ -1,4 +1,5 @@
 import math
+import time
 
 import cv2
 from cvzone.HandTrackingModule import HandDetector
@@ -7,6 +8,7 @@ capture = cv2.VideoCapture(0)
 detect = HandDetector(maxHands=1)
 space = 30
 size=400
+c=0
 while True:
     result, img = capture.read()
     hands, img = detect.findHands(img)
@@ -34,7 +36,10 @@ while True:
     # cv2.imshow("White screen",white)
     cv2.imshow("image", img)
     press=cv2.waitKey(1)
-    if press==ord("s"):
-        
+    if press==ord("a"):
+        c=c+1
+        cv2.imwrite(f'Data/A/handImage_{time.time()}.jpg',white)
+        print(c)
+
 
 
