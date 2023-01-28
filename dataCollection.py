@@ -36,9 +36,9 @@ while True:
     # cv2.imshow("White screen",white)
     cv2.imshow("image", img)
     press=cv2.waitKey(1)
-    if press==ord("a"):
+    if press==ord("s"):
         c=c+1
-        cv2.imwrite(f'Data/Z/handImage_{time.time()}.jpg',white)
+        cv2.imwrite(f'Data/Y/handImage_{time.time()}.jpg',white)
         print(c)
 
 
