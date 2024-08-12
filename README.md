@@ -16,7 +16,7 @@ This project aims to recognize American Sign Language (ASL) alphabet signs using
 4. **Display Result:** The predicted alphabet is displayed on the screen.
 
 ## Working project images
-![Alt text](image_url)
+![Alt text](A.png)
 ![Alt text](image_url)
 ![Alt text](image_url)
 
