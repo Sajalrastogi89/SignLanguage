@@ -17,8 +17,9 @@ This project aims to recognize American Sign Language (ASL) alphabet signs using
 
 ## Working project images
 ![Alt text](A.png)
-![Alt text](image_url)
-![Alt text](image_url)
+![Alt text](B.png)
+![Alt text](C.png)
+![Alt text](L.png)
 
 
 ### Installation
